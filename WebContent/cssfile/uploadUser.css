@@ -1,0 +1,217 @@
+@CHARSET "ISO-8859-1";
+
+.inputform {
+	float: left;
+	margin-left: 0%;
+	margin-top: -.5%;
+	width: 572px;
+	height: 300px;
+	border: 1px solid #0066CC;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	top: 2px;
+	left: 22px;
+	border: 1px solid #0066CC;
+}
+
+#coursename {
+	position: relative;
+	bottom: 46px;
+	left: 153px;
+}
+#courseIdLabel{
+	position: relative;
+	bottom: 46px;
+	left: 153px;
+}
+#coursenametestBox {
+	position: relative;
+	bottom: 8px;
+}
+
+#courseauthorTextBox {
+	position: relative;
+	bottom: 11px;
+	left: 0px;
+}
+
+#courseauthor {
+	position: relative;
+	bottom: 46px;
+	left: 153px;
+}
+
+#courseFIle {
+	position: relative;
+	bottom: 11px;
+	left: 153px;
+}
+
+#courseFIlebox {
+	bottom: 10px;
+	position: relative;
+}
+
+#minduration {
+	position: relative;
+	bottom: 46px;
+	left: 153px;
+}
+
+#minDUrationTextBox {
+	position: relative;
+	bottom: 16px;
+	left: 0px;
+}
+
+table tr td input,textarea,select {
+	width: 200px;
+}
+
+#mandantory {
+	position: relative;
+	top: 165px;
+	left: 576px;
+	color: red;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: underline;
+}
+
+#available {
+	position: relative;
+	top: 185px;
+	left: 151px;
+	color: red;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: underline;
+}
+
+#register {
+	 margin-left: 100px;
+    margin-top: 10%;
+    position: relative;
+    right: 141px;
+    top: 39px;
+    width: 100px;
+}
+
+#userRole {
+	position: relative;
+	bottom: 33px;
+}
+#button{
+	bottom: 40px;
+    left: 172px;
+    position: relative;
+}
+#login {
+  margin-left: 100px;
+    margin-top: 10%;
+    position: relative;
+    right: 146px;
+    top: 38px;
+    width: 100px;
+}
+
+.design {
+	background-color: #0066CC;
+	color: white;
+	padding-left: 38%;
+	position: relative;
+	bottom: 26px;
+}
+
+#password {
+	width: 120%;
+	margin-top: 10%
+}
+
+#secondTable secondTr secondtd firsttr firsttd {
+	width: 100px;
+}
+
+#pocb dscb adcb teamLeadcb {
+	width: 50px;
+}
+
+#entryLevelCb {
+	width: 50px;
+}
+#mentryLevelCb {
+	width: 50px;
+}
+
+#testManger {
+	width: 50px;
+}
+#mtestManger{
+		width: 50px;
+	}
+#dm {
+	width: 50px;
+}
+
+#email {
+	width: 120%;
+	margin-top: 10%
+}
+
+#teamLeadcbl {
+	
+}
+#po{
+	font-size: 15px;
+}
+#entryLevel{
+	font-size: 15px;
+}
+#ad{
+	font-size: 15px;
+}
+#as{
+	font-size: 15px;
+}
+
+#tmentryLevel{
+	font-size: 15px;
+}
+#tmpo{
+	font-size: 15px;
+}
+#tmad{
+	font-size: 15px;
+}
+#tmds{
+	font-size: 15px;
+}
+
+
+#mentryLevel {
+font-size: 15px;	
+}
+#mpo{
+	font-size: 15px;
+}
+#mad{
+	font-size: 15px;
+}
+
+#mas{
+	font-size: 15px;
+}
+#mtmentryLevel {
+font-size: 15px;	
+}
+#mtmpo{
+	font-size: 15px;
+}
+#mtmad{
+	font-size: 15px;
+}
+
+#mtmas{
+	font-size: 15px;
+}

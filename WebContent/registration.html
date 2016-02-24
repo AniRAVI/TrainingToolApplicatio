@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.inputform {
+	float: left;
+	margin-left: 35%;
+	margin-top: 12%;
+	height: 100% !important;
+	width: 500px;
+	border: 1px solid #0066CC;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.inputform table tr td input,textarea,select {
+	width: 200px;
+	margin-top: 2%;
+}
+
+#submit {
+	margin-left: 100px;
+	width: 100px;
+}
+
+#reset {
+	width: 100px;
+}
+
+.design {
+	background-color: #0066CC;
+	color: white;
+	padding-left: 100px;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function validate() {
+			var name = document.check.name.value;
+			var email = document.check.email.value;
+			var password = document.check.password.value;
+			
+			var status = false;
+			if (email.length < 1) {
+				document.getElementById("emailError").innerHTML = "Please enter your email id";
+				status = false;
+			} else 
+			{
+				document.getElementById("emailError").innerHTML = " ";
+			}
+			if (name.length < 1) {
+				document.getElementById("nameError").innerHTML = "Please enter your Name";
+				status = false;
+			} else
+				
+			{
+				document.getElementById("nameError").innerHTML = " ";
+			}
+			if (password.length < 6) {
+				document.getElementById("passwordloc").innerHTML = "Password must be at least 6 char long";
+				status = false;
+			} else {
+				document.getElementById("passwordloc").innerHTML = " ";
+				
+			}
+			if(password.length < 6 && name.length < 1 && password.length < 6  ){
+				status = true;
+			}
+					return status;
+		}
+	</script>
+
+
+
+
+	<div class="inputform">
+		<h2 class="design">Registration Form</h2>
+		<form action="RegisterServlet" method="post" name="check"
+			>
+			<table>
+				<tr>
+					<td>Full Name:</td>
+					<td><input type="text" name="name" id="name" />
+					</td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td><span id="nameError" style="color: red"></span></td>
+				</tr>
+				<tr>
+					<td>Enter Att Id:</td>
+					<td><input type="text" name="email" id="email" />
+					</td>
+					<td>@att.com</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><span id="emailError" style="color: red"></span></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" id="password" />
+					</td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td><span id="passwordloc" style="color: red"></span></td>
+				</tr>
+				<tr>
+					<td>Re Enter The Password:</td>
+					<td><input type="password" name="repassword" id="repassword" />
+					</td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td><span id="repasswordloc" style="color: red"></span></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<input id="submit" type="submit" value="Register" onsubmit="return validate();" />
+					 <input	id="reset" type="reset" value="Clear" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

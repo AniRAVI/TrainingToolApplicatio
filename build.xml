@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name ="TrainingToolApp" default="deploy" >
+<property name="libdir" value="WebContent\WEB-INF\lib"/>
+<property name="resources" value="WebContent"/>
+<property name="webdir" value="WebContent\WEB-INF"/>
+<property name="bindir" value="bin"/>
+<property name="appdir" value="${bindir}/TrainingToolApplication"/>
+<property name="webinfdir" value="${appdir}/WEB-INF"/>
+<property name="classes" value="${webinfdir}/classes"/>
+<property name="deleteWarFile" value="C:/Tomcat/webapps/TrainingToolApplication"/>
+<target name="create" depends ="cleanup">
+<mkdir dir="${classes}"/>
+<mkdir dir="${webinfdir}/lib"/>
+</target>
+<target name="cleanup">
+	<delete dir="${bindir}"/>
+</target>
+	<target name="copy" depends="create">
+<copy todir="${webinfdir}/lib">
+		<fileset dir ="${libdir}" excludes="jsp-api.jar,servlet-api.jar"></fileset>
+	</copy>
+		<copy todir="${webinfdir}">
+				<fileset dir ="${webdir}" includes="web.xml"></fileset>
+			</copy>
+		<copy todir="${appdir}">
+						<fileset dir ="${resources}" includes="*.jsp"></fileset>
+		</copy>
+		<copy todir="${appdir}">
+								<fileset dir ="${resources}" includes="**" excludes="*.jsp,META-INF,WEB-INF"></fileset>
+		</copy>
+		<copy todir="${webinfdir}">
+						<fileset dir ="${webdir}" includes="**" excludes="web.xml"></fileset>
+		</copy>
+	</target>
+	<path id ="TrainingToolClassPath">
+		<fileset dir ="${libdir}" includes="*.jar"></fileset>
+	</path>
+<target name="compile" depends="copy">
+<javac srcdir="src" destdir="${webinfdir}/classes" classpathref="TrainingToolClassPath"></javac>
+</target>
+	<target name="createwar" depends="compile">
+	<jar basedir="${appdir}" destfile="dest/TrainingToolApplication.war"></jar>
+	</target>
+	
+	<target name="deleteWar" depends="createwar">
+		<delete dir="${deleteWarFile}"/>
+		<echo message="Delete war file TrainingApp"/>
+	</target>
+	<property name ="tomcat" value="C:\Tomcat"></property>
+<target name="deploy" depends="deleteWar">
+<copy todir="${tomcat}/webapps">
+<fileset dir="dest" includes='*.war'></fileset>
+</copy>
+</target>
+	 <!--   <target name="tomcat-restart" depends ="deploy">
+	        <antcall target="tomcat-stop" />
+	        <antcall target="tomcat-start" />
+	    </target>
+    <target name="tomcat-stop" >
+        <java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+            <classpath path="${tomcat}/bin/bootstrap.jar:${tomcat}/bin/tomcat-juli.jar" />
+            <jvmarg value="-Dcatalina.home=${tomcat}"/>
+            <arg line="stop"/>
+        </java>
+    	<sleep seconds="2"/>
+		<echo message="Sleep after Stop"/>
+    </target>
+	    <target name="tomcat-start">
+	    	<sleep seconds="2"/>
+			<echo message="Sleep after Start"/>
+	        <java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+	            <classpath path="${tomcat}/bin/bootstrap.jar:${tomcat}/bin/tomcat-juli.jar" />
+	        	<jvmarg value="-Dcatalina.home=${tomcat}"/>
+	        	            <arg line="start"/>	   
+	        </java>
+	    </target>-->
+</project>
